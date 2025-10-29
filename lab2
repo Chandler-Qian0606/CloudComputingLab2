@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>云计算与分布式系统</title>
+    <style>
+        /* 全局样式重置 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", sans-serif;
+        }
+
+        /* 页面背景与整体布局 */
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* 头部样式 */
+        header {
+            background: linear-gradient(135deg, #4a6fa5, #2c4a7a);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* 装饰元素 */
+        .cloud-shape {
+            position: absolute;
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        .cloud1 {
+            top: 20px;
+            left: 10%;
+            width: 150px;
+            height: 150px;
+            background: url('https://picsum.photos/id/15/300/300') no-repeat center;
+            background-size: contain;
+        }
+
+        .cloud2 {
+            bottom: 30px;
+            right: 15%;
+            width: 200px;
+            height: 200px;
+            background: url('https://picsum.photos/id/20/400/400') no-repeat center;
+            background-size: contain;
+        }
+
+        /* 主体内容区 */
+        main {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .container {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            padding: 30px;
+        }
+
+        /* 章节样式 */
+        section {
+            margin-bottom: 40px;
+        }
+
+        section h2 {
+            color: #2c4a7a;
+            border-bottom: 2px solid #4a6fa5;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        section p {
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+        }
+
+        /* 图片容器 */
+        .img-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin: 20px 0;
+            gap: 20px;
+        }
+
+        .img-card {
+            flex: 1 1 300px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .img-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .img-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .img-card p {
+            padding: 15px;
+            text-align: center;
+            background-color: #f9f9f9;
+            margin: 0;
+        }
+
+        /* 页脚样式 */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 60px;
+        }
+
+        /* 响应式调整 */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            section h2 {
+                font-size: 1.5rem;
+            }
+
+            .img-card {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="cloud-shape cloud1"></div>
+        <div class="cloud-shape cloud2"></div>
+        <h1>云计算与分布式系统</h1>
+        <p>探索高效、可扩展的计算架构与分布式技术</p>
+    </header>
+
+    <main>
+        <div class="container">
+            <section>
+                <h2>什么是云计算？</h2>
+                <p>云计算是一种通过网络提供可伸缩的计算资源（如服务器、存储、数据库、网络、软件等）的模型，用户可以按需使用这些资源，无需关注底层基础设施的管理。</p>
+                <p>它的核心优势包括：弹性扩展、成本优化、高可用性和资源共享。常见的云计算服务模式有IaaS（基础设施即服务）、PaaS（平台即服务）和SaaS（软件即服务）。</p>
+                <div class="img-container">
+                    <div class="img-card">
+                        <img src="https://picsum.photos/id/325/600/400" alt="云计算架构">
+                        <p>云计算架构示意图</p>
+                    </div>
+                    <div class="img-card">
+                        <img src="https://picsum.photos/id/239/600/400" alt="云服务模型">
+                        <p>云服务模型对比</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>分布式系统概述</h2>
+                <p>分布式系统是由多个独立计算机（节点）通过网络连接，协同完成一个共同目标的系统。这些节点在物理上可能分散，但在逻辑上呈现为一个统一的系统。</p>
+                <p>分布式系统的关键特性包括：并发性、可扩展性、容错性和透明性。典型的分布式系统应用有分布式数据库、分布式文件系统和微服务架构等。</p>
+                <div class="img-container">
+                    <div class="img-card">
+                        <img src="https://picsum.photos/id/180/600/400" alt="分布式系统架构">
+                        <p>分布式系统节点协作</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>云计算与分布式系统的关系</h2>
+                <p>云计算依赖于分布式系统技术来实现资源的高效管理和调度。例如，云平台通过分布式计算框架处理海量任务，通过分布式存储系统管理大规模数据。</p>
+                <p>同时，分布式系统也借助云计算的基础设施实现更灵活的部署和扩展。两者相辅相成，共同推动了现代互联网应用的发展。</p>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2025 云计算与分布式系统学习平台 | 仅供学习交流使用</p>
+    </footer>
+</body>
+</html>
